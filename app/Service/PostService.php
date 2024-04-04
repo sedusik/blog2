@@ -5,7 +5,6 @@ namespace App\Service;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use mysql_xdevapi\Exception;
 
 class PostService
 {
@@ -13,18 +12,25 @@ class PostService
     {
         try {
             Db::beginTransaction();
-            $tagIds = $data['tag_ids'];
-            unset($data['tag_ids']);
 
-            if( array_key_exists('preview_image',$data)){
+            if (isset($data['tag_ids'])) {
+                $tagIds = $data['tag_ids'];
+                unset($data['tag_ids']);
+            }
+
+            if (isset($data['preview_image'])) {
                 $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
             }
-            if( array_key_exists('main_image',$data)){
+            if (isset($data['main_image'])) {
                 $data['main_image'] = Storage::disk('public')->put('/images', $data['main_image']);
             }
 
             $post = Post::firstOrCreate($data);
-            $post->tags()->attach($tagIds);
+
+            if (isset($tagIds)) {
+                $post->tags()->attach($tagIds);
+            }
+
             Db::commit();
         } catch (\Exception $exception) {
             Db::rollBack();
@@ -36,19 +42,26 @@ class PostService
     {
         try {
             Db::beginTransaction();
-            $tagIds = $data['tag_ids'];
-            unset($data['tag_ids']);
 
-            if( array_key_exists('preview_image',$data)){
+            if (isset($data['tag_ids'])) {
+                $tagIds = $data['tag_ids'];
+                unset($data['tag_ids']);
+            }
+
+            if (isset($data['preview_image'])){
                 $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
             }
-            if( array_key_exists('main_image',$data)){
+            if (isset($data['main_image'])){
                 $data['main_image'] = Storage::disk('public')->put('/images', $data['main_image']);
             }
 
             $post = Post::firstOrCreate($data);
             $post->update($data);
-            $post->tags()->sync($tagIds);
+
+            if (isset($tagIds)) {
+                $post->tags()->sync($tagIds);
+            }
+
             Db::commit();
         } catch (\Exception $exception) {
             Db::rollBack();
