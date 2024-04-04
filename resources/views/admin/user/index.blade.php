@@ -50,8 +50,8 @@
                                         <tr>
                                             <td>{{ $user->id }}</td>
                                             <td>{{ $user->name }}</td>
-                                            <td><a href="{{ route('admin.user.show', $category->id) }}"><i class="far fa-eye"></i></a></td>
-                                            <td><a href="{{ route('admin.user.edit', $category->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a href="{{ route('admin.user.show', $user->id) }}"><i class="far fa-eye"></i></a></td>
+                                            <td><a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                             <td>
                                                 <form action="{{ route('admin.user.delete', $user->id) }}" method="POST">
                                                     @csrf
