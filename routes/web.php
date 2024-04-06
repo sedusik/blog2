@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController');
+});
+
+Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth','verified']], function () {
+    Route::group(['namespace' => 'Main'], function () {
+        Route::get('/main', 'IndexController')->name('personal.main.index');
+    });
+    Route::group(['namespace' => 'Liked'], function () {
+        Route::get('/likeds', 'IndexController')->name('personal.liked.index');
+    });
+    Route::group(['namespace' => 'Comment'], function () {
+        Route::get('/comments', 'IndexController')->name('personal.comment.index');
+    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
