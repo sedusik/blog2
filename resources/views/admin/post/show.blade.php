@@ -21,7 +21,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Главное меню</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('admin.post.index') }}">Пользователи</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.post.index') }}">Посты</a></li>
                             <li class="breadcrumb-item active">{{ $post->title }}</li>
                         </ol>
                     </div><!-- /.col -->
