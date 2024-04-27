@@ -49,6 +49,10 @@
                                             <td>Название</td>
                                             <td>{{ $user->name }}</td>
                                         </tr>
+                                        <tr>
+                                            <td>Роль</td>
+                                            <td>{{ $user->role ? 'Читатель' : 'Администратор'}}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
