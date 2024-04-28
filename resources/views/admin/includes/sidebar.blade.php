@@ -16,9 +16,9 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.main.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-home"></i>
+                    <i class="nav-icon fas fa-tools"></i>
                     <p>
-                        Главное меню
+                        Панель управления
                     </p>
                 </a>
             </li>

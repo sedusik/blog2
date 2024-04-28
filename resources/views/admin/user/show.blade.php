@@ -46,8 +46,12 @@
                                             <td>{{ $user->id }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Название</td>
+                                            <td>Имя</td>
                                             <td>{{ $user->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Электронная почта</td>
+                                            <td>{{ $user->email }}</td>
                                         </tr>
                                         <tr>
                                             <td>Роль</td>

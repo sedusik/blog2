@@ -43,6 +43,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+                <li class="mt-2">
+                    <div>Администратор <span class="text-success">{{ auth()->user()->name }}</span></div>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
@@ -58,7 +63,7 @@
 
     @yield('content')
     <footer class="main-footer">
-        <strong>Blog</strong>
+        <strong>Блог о путешествиях</strong>
     </footer>
 
     <!-- Control Sidebar -->

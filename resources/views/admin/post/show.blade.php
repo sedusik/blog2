@@ -49,6 +49,26 @@
                                             <td>Название</td>
                                             <td>{{ $post->title }}</td>
                                         </tr>
+                                        <tr>
+                                            <td>Категория</td>
+                                            <td>{{ $post->category->title }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Дата создания</td>
+                                            <td>{{ $post->created_at }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Дата обновления</td>
+                                            <td>{{ $post->updated_at }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Посмотреть пост в блоге</td>
+                                            <td>
+                                                <a href="{{ route('post.show', $post->id) }}">
+                                                    <h6>{{ $post->title }}</h6>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

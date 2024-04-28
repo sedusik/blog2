@@ -32,6 +32,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
+                                <label>Название категории:</label>
                                 <input type="text" class="form-control" name="title" placeholder="Название категории"
                                 value=" {{ $category->title }} ">
                                 @error('title')

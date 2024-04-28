@@ -31,6 +31,7 @@
                         <form action=" {{ route('admin.tag.store') }}" method="POST" class="w-25">
                             @csrf
                             <div class="form-group">
+                                <label>Название тэга:</label>
                                 <input type="text" class="form-control" name="title" placeholder="Название тэга">
                                 @error('title')
                                     <div class="text-danger">Это поле необходимо заполнить</div>
