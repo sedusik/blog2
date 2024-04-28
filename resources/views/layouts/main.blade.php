@@ -17,7 +17,7 @@
 <header class="edica-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/images/logo55.png') }}" alt="Edica"></a>
+            <a class="navbar-brand" href="{{ route('main.index') }}"><img src="{{ asset('assets/images/logo55.png') }}" alt="Edica"></a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,10 +27,10 @@
                         <a class="nav-link" href="{{ route('main.index') }}"><h5>Блог</h5></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><h5>Об авторе</h5></a>
+                        <a class="nav-link" href="{{ route('about.index') }}"><h5>Об авторе</h5></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><h5>Контакты</h5></a>
+                        <a class="nav-link" href="{{ route('contacts.index') }}"><h5>Контакты</h5></a>
                     </li>
                     <li class="nav-item">
                         @auth()
@@ -66,14 +66,14 @@
             </div>
             <div class="col-md-3 d-flex align-items-center mx-3">
                 <nav class="footer-nav">
-                    <a href="#!" class="nav-link">Блог</a>
-                    <a href="#!" class="nav-link">Категории</a>
+                    <a href="{{ route('main.index') }}" class="nav-link">Блог</a>
+                    <a href="{{ route('category.index') }}" class="nav-link">Категории</a>
                 </nav>
             </div>
             <div class="col-md-3 d-flex align-items-center">
                 <nav class="footer-nav">
-                    <a href="#!" class="nav-link">Об авторе</a>
-                    <a href="#!" class="nav-link">Контакты</a>
+                    <a href="{{ route('about.index') }}" class="nav-link">Об авторе</a>
+                    <a href="{{ route('contacts.index') }}" class="nav-link">Контакты</a>
                 </nav>
             </div>
         </div>

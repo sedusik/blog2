@@ -101,5 +101,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
 });
 
+Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'about'], function () {
+    Route::get('/', 'AboutController')->name('about.index');
+});
+
+Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'contacts'], function () {
+    Route::get('/', 'ContactsController')->name('contacts.index');
+});
+
 Auth::routes(['verify' => true]);
 
