@@ -3,7 +3,7 @@
 @section('content')
 <main class="blog">
     <div class="container">
-        <h1 class="edica-page-title" data-aos="fade-up">Блог о путешествиях</h1>
+        <h2 class="edica-page-title" data-aos="fade-up">Блог о путешествиях</h2>
         <section class="featured-posts-section">
             <div class="row">
                 @foreach($posts as $post)
@@ -19,7 +19,7 @@
                             <span>{{ $post->liked_users_count }}</span>
                             <button type="submit"class="border-0 bg-transparent">
                                     @if(auth()->user()->likedPosts->contains($post->id))
-                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-heart" style="color: #f50000;"></i>
                                     @else
                                         <i class="far fa-heart"></i>
                                     @endif
@@ -49,7 +49,6 @@
             <div class="col-md-8">
                 <section>
                     <div>
-                        <h3>Случайные посты</h3>
                         <div class="row blog-post-row">
                             @foreach($randomPosts as $post)
                             <div class="col-md-6 blog-post" data-aos="fade-up">
@@ -85,7 +84,7 @@
                 <div class="widget">
                     <a href="{{ route('category.index') }}" class="text-decoration-none">
                         <h5 class="widget-title">Категории</h5>
-                        <img src="{{ asset('assets/images/blog_widget_categories.jpg') }}" alt="categories" class="w-100">
+                        <img src="{{ asset('assets/images/category2.jpg') }}" alt="categories" class="w-100">
                     </a>
                 </div>
             </div>

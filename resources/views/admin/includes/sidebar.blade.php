@@ -7,10 +7,18 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="{{ route('admin.main.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-home"></i>
+                <a href="{{ route('post.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-blog"></i>
                     <p>
-                        Главное меню
+                        Блог
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.main.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-tools"></i>
+                    <p>
+                        Панель управления
                     </p>
                 </a>
             </li>

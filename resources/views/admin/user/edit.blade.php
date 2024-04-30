@@ -32,6 +32,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
+                                <label for="name">Введите имя пользователя:</label>
                                 <input type="text" class="form-control" name="name" placeholder="Имя пользователя"
                                 value=" {{ $user->name }} ">
                                 @error('name')
@@ -39,6 +40,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label for="name">Введите электронную почту пользователя:</label>
                                 <input type="text" class="form-control" name="email" placeholder="Email" value=" {{ $user->email }} ">
                                 @error('email')
                                 <div class="text-danger">{{ $message }}</div>

@@ -15,6 +15,13 @@
                     </div>
                 </div>
             </section>
+            <section>
+                <div class="col-lg-9 mx-auto">
+                    @foreach($post->tags as $tag)
+                            <span class="badge bg-warning text-wrap ml-1">{{ $tag->title }}</span>
+                    @endforeach
+                </div>
+            </section>
             <div class="row">
                 <div class="col-lg-9 mx-auto">
                     <section class="py-5">
@@ -24,7 +31,7 @@
                             <span>{{ $post->liked_users_count }}</span>
                             <button type="submit"class="border-0 bg-transparent">
                                     @if(auth()->user()->likedPosts->contains($post->id))
-                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-heart" style="color: #f50000;"></i>
                                     @else
                                         <i class="far fa-heart"></i>
                                     @endif
@@ -52,13 +59,13 @@
                         </div>
                     </section>
                     @endif
-                    <section class="comment-list mb-5">
+                    <section class="comment-list mb-5 fw-bold">
                         <h2 class="section-list mb-5" data-aos="fade-up">Комментарии ({{ $post->comments->count() }})</h2>
                         @foreach($post->comments as $comment)
                         <div class="comment-text mb-3">
                             <span class="username">
                                 <div>
-                                    {{ $comment->user->name }}
+                                    <b>{{ $comment->user->name }}</b>
                                 </div>
                               <span class="text-muted float-right">{{ $comment->dataAsCarbon->diffForHumans() }}</span>
                             </span><!-- /.username -->

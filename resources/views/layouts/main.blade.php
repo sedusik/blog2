@@ -17,27 +17,27 @@
 <header class="edica-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/images/logo.svg') }}" alt="Edica"></a>
+            <a class="navbar-brand" href="{{ route('main.index') }}"><img src="{{ asset('assets/images/logo55.png') }}" alt="Edica"></a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="edicaMainNav">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('main.index') }}">Блог</a>
+                        <a class="nav-link" href="{{ route('main.index') }}"><h5>Блог</h5></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Об авторе</a>
+                        <a class="nav-link" href="{{ route('about.index') }}"><h5>Об авторе</h5></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Контакты</a>
+                        <a class="nav-link" href="{{ route('contacts.index') }}"><h5>Контакты</h5></a>
                     </li>
                     <li class="nav-item">
                         @auth()
-                            <a class="nav-link" href="{{ route('personal.main.index') }}">Личный кабинет</a>
+                            <a class="nav-link" href="{{ route('personal.main.index') }}"><h5>Личный кабинет</h5></a>
                         @endauth
                         @guest()
-                                <a class="nav-link" href="{{ route('personal.main.index') }}">Войти</a>
+                                <a class="nav-link" href="{{ route('personal.main.index') }}"><h5>Войти</h5></a>
                         @endguest
                     </li>
                 </ul>
@@ -48,44 +48,32 @@
 
 @yield('content')
 
-<section class="edica-footer-banner-section" data-aos="fade-up">
+
+<footer class="edica-footer py-3 mt-1" data-aos="fade-up">
     <div class="container">
-        <div class="footer-banner">
-            <h1 class="banner-title">Download it now.</h1>
-            <div class="banner-btns-wrapper">
-                <button class="btn btn-success"> <img src="assets/images/apple@1x.svg" alt="ios" class="mr-2"> App Store</button>
-                <button class="btn btn-success"> <img src="assets/images/android@1x.svg" alt="android" class="mr-2"> Google Play</button>
-            </div>
-            <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or service.</p>
-        </div>
-    </div>
-</section>
-<footer class="edica-footer" data-aos="fade-up">
-    <div class="container">
-        <div class="row footer-widget-area">
+        <div class="row footer-widget-area py-2">
             <div class="col-md-3">
                 <a href="index.html" class="footer-brand-wrapper">
-                    <img src="{{ asset('assets/images/logo.svg') }}" alt="edica logo">
+                    <img src="{{ asset('assets/images/logo55.png') }}" alt="edica logo">
                 </a>
-                <p class="contact-details">hello@edica.com</p>
-                <p class="contact-details">+23 3000 000 00</p>
+                <p class="contact-details">couworld@gmail.com</p>
                 <nav class="footer-social-links">
-                    <a href="#!"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#!"><i class="fab fa-twitter"></i></a>
-                    <a href="#!"><i class="fab fa-behance"></i></a>
-                    <a href="#!"><i class="fab fa-dribbble"></i></a>
+                    <h6>Для связи с автором:</h6>
+                    <a href="https://t.me/sedustan"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://vk.com/sedusova96"><i class="fab fa-vk"></i></a>
+                    <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
                 </nav>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 d-flex align-items-center mx-3">
                 <nav class="footer-nav">
-                    <a href="#!" class="nav-link">Об авторе</a>
-                    <a href="#!" class="nav-link">Контакты</a>
+                    <a href="{{ route('main.index') }}" class="nav-link">Блог</a>
+                    <a href="{{ route('category.index') }}" class="nav-link">Категории</a>
                 </nav>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 d-flex align-items-center">
                 <nav class="footer-nav">
-                    <a href="#!" class="nav-link">Категории</a>
-                    <a href="#!" class="nav-link">Reporting</a>
+                    <a href="{{ route('about.index') }}" class="nav-link">Об авторе</a>
+                    <a href="{{ route('contacts.index') }}" class="nav-link">Контакты</a>
                 </nav>
             </div>
         </div>

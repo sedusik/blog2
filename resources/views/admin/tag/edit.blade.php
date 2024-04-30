@@ -32,6 +32,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
+                                <label>Название тэга:</label>
                                 <input type="text" class="form-control" name="title" placeholder="Название тэга"
                                 value=" {{ $tag->title }} ">
                                 @error('title')
