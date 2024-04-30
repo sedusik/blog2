@@ -33,9 +33,10 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Название</th>
-                                        <th>Редактирование</th>
-                                        <th>Удаление</th>
+                                        <th>Комментарий</th>
+                                        <th>Название статьи</th>
+                                        <th>Редактировать</th>
+                                        <th>Удалить</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -43,6 +44,7 @@
                                         <tr>
                                             <td>{{ $comment->id }}</td>
                                             <td>{{ $comment->message }}</td>
+                                            <td>{{ $comment->post->title }}</td>
                                             <td><a href="{{ route('personal.comment.edit', $comment->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                             <td>
                                                 <form action="{{ route('personal.comment.delete', $comment->id) }}" method="POST">

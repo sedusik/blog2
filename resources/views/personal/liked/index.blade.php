@@ -33,9 +33,9 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Название</th>
-                                        <th>Просмотр</th>
-                                        <th>Удаление</th>
+                                        <th>Название поста</th>
+                                        <th>Просмотр поста</th>
+                                        <th>Удалить <i class="nav-icon fas fa-heart" style="color: #f50000;"></i></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -43,7 +43,7 @@
                                         <tr>
                                             <td>{{ $post->id }}</td>
                                             <td>{{ $post->title }}</td>
-                                            <td><a href="{{ route('admin.post.show', $post->id) }}"><i class="far fa-eye"></i></a></td>
+                                            <td><a href="{{ route('post.show', $post->id) }}"><i class="far fa-eye"></i></a></td>
                                             <td>
                                                 <form action="{{ route('personal.liked.delete', $post->id) }}" method="POST">
                                                     @csrf

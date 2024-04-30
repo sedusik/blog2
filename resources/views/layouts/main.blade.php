@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row footer-widget-area py-2">
             <div class="col-md-3">
-                <a href="index.html" class="footer-brand-wrapper">
+                <a href="{{ route('main.index') }}" class="footer-brand-wrapper">
                     <img src="{{ asset('assets/images/logo55.png') }}" alt="edica logo">
                 </a>
                 <p class="contact-details">couworld@gmail.com</p>

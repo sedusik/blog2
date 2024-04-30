@@ -24,7 +24,7 @@
             </section>
             <div class="row">
                 <div class="col-lg-9 mx-auto">
-                    <section class="py-5">
+                    <section class="py-5 ml-2">
                         @auth()
                         <form action="{{ route('post.like.store', $post->id) }}" method="post">
                             @csrf
