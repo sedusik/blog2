@@ -20,7 +20,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Главное меню</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Панель админа</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">Пользователи</a></li>
                             <li class="breadcrumb-item active">{{ $user->name }}</li>
                         </ol>
