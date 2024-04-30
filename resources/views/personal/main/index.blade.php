@@ -29,7 +29,7 @@
                         <!-- small box1 -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>10</h3>
+                                <h3>{{ auth()->user()->likedPosts()->count() }}</h3>
 
                                 <p>Нравится</p>
                             </div>
@@ -44,7 +44,7 @@
                         <!-- small box2 -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>10</h3>
+                                <h3>{{ auth()->user()->comments()->count() }}</h3>
 
                                 <p>Комментарии</p>
                             </div>
